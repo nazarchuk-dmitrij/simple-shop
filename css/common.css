@@ -1,0 +1,282 @@
+@import "reset.css";
+@font-face {
+	font-family: "SegoeUI";
+	src: url("../fonts/SegoeUILight/SegoeUILight.eot");
+	src: url("../fonts/SegoeUILight/SegoeUILight.eot?#iefix")format("embedded-opentype"), url("../fonts/SegoeUILight/SegoeUILight.woff") format("woff"), url("../fonts/SegoeUILight/SegoeUILight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "SegoeUIBold";
+	src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot");
+	src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot?#iefix")format("embedded-opentype"), url("../fonts/SegoeUISemiBold/SegoeUISemiBold.woff") format("woff"), url("../fonts/SegoeUISemiBold/SegoeUISemiBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font: 40px 'SegoeUI';
+}
+
+body * {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+
+/*---header---*/
+
+.top-line {
+	height: 3px;
+	background: url('../img/items/line.png') repeat-x;
+}
+
+header {
+	width: 100%;
+	height: 60px;
+	margin: 20px 0 40px;
+	display: flex;
+	justify-content: center;
+}
+
+h3 {
+	font-family: 'SegoeUIBold';
+}
+
+.header-wrapper {
+	width: 950px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cart {
+	width: 200px;
+	height: 60px;
+	padding: 15px 20px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #D9644A;
+	font-size: 27px;
+	color: #FFF;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.cart:hover {
+	background-color: #CD1F20;
+}
+
+#cartSum {
+	line-height: 30px;
+}
+
+#cartSum:before {
+	content: '$';
+}
+
+.back-button {
+	width: 42px;
+	height: 42px;
+	border-radius: 20px;
+	background: url('../img/items/backbutton.png');
+	cursor: pointer;
+	transition: 0.3s;
+	margin-top: 9px;
+}
+
+.back-button:hover {
+	background-color: #D8C9AD;
+}
+
+
+/*---main---*/
+
+.dragscroll {
+	overflow: auto;
+	padding-left: 25%;
+	width: 100%;
+	padding-bottom: 20px;
+}
+
+.grid {
+	height: 600px;
+	width: 1950px;
+	margin: 0;
+}
+
+.grid-item {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.small {
+	width: 230px;
+	height: 180px;
+}
+
+.wide {
+	width: 470px;
+	height: 180px;
+}
+
+.long {
+	width: 230px;
+	height: 370px;
+}
+
+.grid .huge,
+.grid .huge img {
+	width: 470px;
+	height: 370px;
+}
+
+figure {
+	cursor: pointer;
+}
+
+.grid .small img {
+	width: 230px;
+	height: auto;
+}
+
+.grid .wide img {
+	width: 470px;
+	height: 180px;
+}
+
+.grid .long img {
+	width: 230px;
+	height: 370px;
+}
+
+.grid>figure figcaption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 36px;
+	background-color: rgba(254, 254, 254, 0.8);
+	font: 20px 'SegoeUIBold';
+	text-align: left;
+	padding-left: 8%;
+	transition: 0.4s;
+}
+
+.grid>figure:hover figcaption {
+	background-color: #CD1F20;
+	color: #FFF;
+}
+
+.goods {
+	width: 3750px;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 40px;
+}
+
+.dont-display {
+	display: none;
+}
+
+.product {
+	position: relative;
+	height: 445px;
+	border: 4px solid #D9644A;
+}
+
+.product-item,
+.product-item img {
+	position: relative;
+	height: 360px;
+	width: 327px;
+}
+
+.product-item figcaption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	padding: 5px 10px;
+	display: flex;
+	justify-content: space-between;
+	font: 20px 'SegoeUIBold';
+	color: #000;
+	background-color: rgba(254, 254, 254, 0.8);
+}
+
+.product-price {
+	color: #D9644A;
+}
+
+.product-price:before {
+	content: '$';
+}
+
+.add-to-cart {
+	position: absolute;
+	bottom: 0;
+	width: 327px;
+	height: 80px;
+	padding: 4px 10px 17px;
+	background-color: #4EA686;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	color: #FFF;
+	font-size: 35px;
+}
+
+.add-to-cart>span {
+	font-size: 15px;
+}
+
+.remove-product,
+.add-product {
+	position: absolute;
+	top: 21px;
+	width: 36px;
+	height: 36px;
+	border: 2px solid #FFF;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 20px;
+	font-size: 45px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.remove-product:hover,
+.add-product:hover {
+	background-color: #333D3F;
+}
+
+.remove-product {
+	left: 7px;
+}
+
+.add-product {
+	right: 7px;
+}
+
+
+/*---footer---*/
+
+.bottom-line {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	background: url('../img/items/line.png') repeat-x;
+}
